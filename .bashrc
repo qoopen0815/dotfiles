@@ -122,6 +122,8 @@ cdls ()
 }
 
 alias cd="cdls"
+alias fetch_all="source ~/scripts/fetch_all.sh"
 
 source /opt/ros/kinetic/setup.bash
 export UE4_ROOT=~/HDDdir/ubuntu/UnrealEngine
+
