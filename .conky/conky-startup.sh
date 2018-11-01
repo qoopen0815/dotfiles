@@ -1,4 +1,4 @@
-sleep 10s
+sleep 20s
 killall conky
 cd "/home/kuwano/.conky/Gotham"
 conky -c "/home/kuwano/.conky/Gotham/Gotham" &
