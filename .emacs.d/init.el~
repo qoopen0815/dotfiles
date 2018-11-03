@@ -63,4 +63,7 @@
 ;;
 ;;markdown
 ;;
-(autoload 'markdown-preview-mode "markdown-preview-mode.el" t)
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+;; (setq auto-mode-alist
+;;       (append '(("\\.md$" . yatex-mode)
+;;                 ("\\.txt$" . yatex-mode)) auto-mode-alist))
