@@ -123,6 +123,7 @@ cdls ()
 
 alias cd="cdls"
 alias fetch_all="source ~/.scripts/Git/fetch_all.sh"
+alias sros="source ~/catkin_ws/devel/setup.bash && source ~/denso_ws/devel/setup.bash"
 
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
