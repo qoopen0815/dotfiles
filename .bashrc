@@ -128,8 +128,3 @@ alias sros="source ~/catkin_ws/devel/setup.bash && source ~/denso_ws/devel/setup
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 source ~/denso_ws/devel/setup.bash
-
-export UE4_ROOT=~/HDDdir/ubuntu/UnrealEngine
-export GCC4MBED_DIR=~/gcc4mbed
-export ROS_LIB_DIR=~/ros/lib/ros_lib
-
