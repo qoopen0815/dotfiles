@@ -147,3 +147,10 @@
      (when (locate-library "flycheck-irony")
        (flycheck-irony-setup))))
 
+;;
+;; rosemacs
+;;
+(add-to-list 'load-path "/opt/ros/kinetic/share/emacs/site-lisp")
+;; or whatever your install space is + "/share/emacs/site-lisp"
+(require 'rosemacs-config)
+
