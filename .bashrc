@@ -123,8 +123,33 @@ cdls ()
 
 alias cd="cdls"
 alias fetch_all="source ~/.scripts/Git/fetch_all.sh"
-alias sros="source ~/catkin_ws/devel/setup.bash && source ~/denso_ws/devel/setup.bash"
+alias sros_catkin="source ~/catkin_ws/devel/setup.bash"
+alias sros_denso="source ~/denso_ws/devel/setup.bash"
 
 source /opt/ros/kinetic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 source ~/denso_ws/devel/setup.bash
+
+
+# yamacir-kit
+function gitinfo()
+{
+  if git status &> /dev/null
+  then
+    git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    # echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
+    echo -e "$git_branch[$(git status -s | wc -l)]"
+  else
+    echo "norepo"
+  fi
+}
+
+function bgjobs()
+{
+  [[ $(jobs) ]] && echo ", jobs[$(jobs | wc -l)]"
+}
+
+export PS1="\n"
+export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\n"
+export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
+export PS1="$PS1>> "
