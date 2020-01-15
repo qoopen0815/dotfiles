@@ -1,12 +1,10 @@
-    #!/usr/bin/perl
-    $latex = 'platex -guess-input-enc -src-specials -interaction=nonstopmode -synctex=1';
-    $latex_silent = 'platex -interaction=batchmode';
-    $dvips = 'dvips';
-    $bibtex = 'pbibtex';
-    $makeindex = 'mendex -r -c -s jind.ist';
-    $dvi_previewer = 'start dviout';
-    $dvipdf = 'dvipdfmx %O -o %D %S';
-    $pdf_previewer = 'xdg-open';
-    $preview_continuous_mode = 1;
-    $pdf_mode = 3;
-    $pdf_update_method = 4;
+#!/usr/bin/perl
+
+$latex = 'platex -interaction=nonstopmode -kanji=utf-8 %O %S';
+$dvipdf = 'dvipdfmx %O -o %D %S';
+$pdf_previewer = 'xdg-open';
+$preview_continuous_mode = 1;
+$bibtex = 'pbibtex';
+$pdf_mode = 3; # use dvipdf
+$pdf_update_method = 4;
+$pdf_previewer = 'evince';
