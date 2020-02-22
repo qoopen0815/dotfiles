@@ -88,6 +88,11 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
+cdls ()
+{
+    \cd "$@" && ls
+}
+alias cd="cdls"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -116,20 +121,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-cdls ()
-{
-    \cd "$@" && ls
-}
-
-alias cd="cdls"
-alias fetch_all="source ~/.scripts/Git/fetch_all.sh"
-alias sros_catkin="source ~/catkin_ws/devel/setup.bash"
-alias sros_denso="source ~/denso_ws/devel/setup.bash"
-
-source /opt/ros/kinetic/setup.bash
-source ~/catkin_ws/devel/setup.bash
-source ~/denso_ws/devel/setup.bash
-
+source /opt/ros/melodic/setup.bash
 
 # yamacir-kit
 function gitinfo()
